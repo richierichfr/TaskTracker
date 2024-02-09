@@ -1,0 +1,19 @@
+<h1>Tasks</h1>
+<div class="container">
+<div class="row">
+<div class="column">
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.title %></li>
+    <li><%= task.description %></li>
+    <%= link_to "Delete", tasks_path,
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  <% end %>
+</ul>
+<%= link_to "add a new task", new_task_path %>
+
+</div>
+
+</div>
+
+</div>
